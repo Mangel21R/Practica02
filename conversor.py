@@ -14,7 +14,7 @@ def convertir(precio_usd, moneda_destino, tasas):
     tasa = tasas["USD"].get(moneda_destino)
     if not tasa:
         raise ValueError("Moneda no soportada")
-    return precio_usd * tasa
+    return round(precio_usd * tasa, 2)
 
 
 def registrar_transaccion(producto, precio_convertido, moneda, ruta_log):
